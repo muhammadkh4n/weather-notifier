@@ -1,5 +1,6 @@
 package com.muhammadkh4n.weathernotifier;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor edit = settings.edit();
             edit.putString("alarmNumber", alarm_number.getText().toString());
             edit.commit();
+        } else {
+            Toast invalidToast = Toast.makeText(this, "Enter a valid Number", Toast.LENGTH_LONG);
+            invalidToast.show();
         }
     }
 
